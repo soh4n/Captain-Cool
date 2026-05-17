@@ -1,0 +1,37 @@
+[project]
+name = "captain-cool"
+version = "0.1.0"
+description = "Gemini-powered IPL captaincy strategist with a visible multi-agent debate loop."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Sohan" }]
+keywords = ["gemini", "fastapi", "cricket", "ipl", "multi-agent", "google-adk"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Framework :: FastAPI",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Internet :: WWW/HTTP :: HTTP Servers",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["src/tests"]
+pythonpath = ["."]
+addopts = "-q"
+asyncio_default_fixture_loop_scope = "function"
+filterwarnings = [
+  "ignore::PendingDeprecationWarning",
+  "ignore::pytest.PytestDeprecationWarning",
+]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]

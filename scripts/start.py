@@ -1,4 +1,4 @@
-"""Quick-start script — runs the Captain Cool server."""
+"""Quick-start script for the Captain Cool server."""
 
 import uvicorn
 

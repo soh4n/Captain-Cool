@@ -1,8 +1,25 @@
 # Captain Cool
 
+[![CI](https://github.com/soh4n/Captain-Cool/actions/workflows/ci.yml/badge.svg)](https://github.com/soh4n/Captain-Cool/actions/workflows/ci.yml)
+![Python](https://img.shields.io/badge/python-3.10%2B-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-ASGI-009688)
+![Gemini](https://img.shields.io/badge/Gemini-multi--agent-673ab7)
+![License](https://img.shields.io/badge/license-MIT-green)
+
 Captain Cool is a Gemini-powered IPL captaincy strategist that turns live match state into a clear tactical call. Instead of acting like a generic chatbot, it runs a visible debate between named agents, uses real tools for cricket context, and explains the final decision in language a captain, coach, or fan can understand.
 
 Repository: `soh4n/Captain-Cool`
+
+## Quick Links
+
+- [Architecture](docs/architecture.md)
+- [API reference](docs/API_REFERENCE.md)
+- [Evaluation guide](docs/EVALUATION.md)
+- [Demo script](docs/DEMO_SCRIPT.md)
+- [Deployment notes](docs/DEPLOYMENT.md)
+- [Quality checklist](docs/QUALITY_CHECKLIST.md)
+- [Roadmap](ROADMAP.md)
+- [Changelog](CHANGELOG.md)
 
 ## Highlights
 
@@ -13,7 +30,18 @@ Repository: `soh4n/Captain-Cool`
 - Multi-turn tactical loop: propose, challenge, defend or revise.
 - Live/recent IPL support through Cricbuzz RapidAPI.
 - Static frontend served by FastAPI with War Room, Insights, and History views.
-- Documentation and prompt pack for a dev.to-style submission.
+- Repository evidence pack: architecture docs, API reference, evaluation guide, demo script, CI, issue templates, security notes, and prompt pack.
+
+## Why This Repository Stands Out
+
+| Reviewer Signal | Evidence In This Repo |
+| --- | --- |
+| Clear product idea | Cricket-specific captaincy strategist with match-state inputs, not a generic chat wrapper |
+| Agentic design | Visible Gamma -> Alpha -> Beta -> Alpha debate loop with defend-or-revise behavior |
+| Real tool use | Open-Meteo weather/dew lookup, win-probability helper, Cricbuzz RapidAPI integration |
+| Working backend shape | FastAPI routes, typed Pydantic schema, static frontend mount, health endpoint |
+| Evaluation readiness | Demo script, API reference, architecture notes, submission mapping, quality checklist |
+| Maintenance polish | CI workflow, PR template, issue templates, changelog, roadmap, security policy |
 
 ## How It Works
 
@@ -41,6 +69,7 @@ flowchart LR
 
     subgraph API["FastAPI Backend"]
         Main["main.py"]
+        Health["GET /api/health"]
         Strategize["POST /api/strategize"]
         Live["GET /api/live"]
         Matches["GET /api/matches"]
@@ -68,6 +97,7 @@ flowchart LR
     end
 
     Client --> Main
+    Main --> Health
     Main --> Strategize
     Main --> Live
     Main --> Matches
@@ -136,10 +166,17 @@ Captain Cool supports manual match-state input through the API and live-state mo
 |   |-- services/                 # Agents and cricket tools
 |   `-- tests/                    # Unit tests
 |-- docs/architecture.md          # Architecture notes
+|-- docs/API_REFERENCE.md         # Endpoint contracts
+|-- docs/EVALUATION.md            # Reviewer-facing rubric mapping
+|-- docs/DEMO_SCRIPT.md           # Repeatable demo walkthrough
+|-- docs/DEPLOYMENT.md            # Hosting notes
+|-- docs/QUALITY_CHECKLIST.md     # Pre-submission checklist
 |-- adk_agents/                   # Google ADK-compatible agent project
 |-- AI_STUDIO_PROMPT.md           # Prompt prototyping pack
 |-- devto_blog.md                 # Blog draft
+|-- .github/                      # CI, issue templates, PR template
 |-- .antigravity/                 # Local agent trace/evidence package
+|-- pyproject.toml                # Project metadata and test/lint settings
 `-- requirements.txt
 ```
 
@@ -190,6 +227,7 @@ The ADK scaffold follows Google's documented Python pattern: `from google.adk.ag
 
 | Method | Path | Purpose |
 | --- | --- | --- |
+| `GET` | `/api/health` | Lightweight readiness check for demos and deployment probes |
 | `POST` | `/api/strategize` | Runs the full Gemini agent debate |
 | `GET` | `/api/live` | Gets the current live/recent IPL match state |
 | `GET` | `/api/matches` | Lists live/recent IPL matches |
@@ -233,7 +271,14 @@ python -m pytest src\tests
 Current verified result:
 
 ```text
-3 passed
+6 passed
+```
+
+Additional repository checks:
+
+```powershell
+python -m compileall main.py src adk_agents
+python -c "import main; print(main.app.title)"
 ```
 
 ## Evaluation Mapping
@@ -243,7 +288,8 @@ Current verified result:
 | Relevance | Cricket-specific state, captain side, match phase, bowling resources, pitch/dew, target pressure |
 | Technical depth | Gemini calls per agent, function tools, FastAPI endpoints, live cricket data integration |
 | Agentic design | Strategist proposal, Devil's Advocate critique, final defend-or-revise loop, optional ADK scaffold |
-| Documentation | Architecture doc, AI Studio prompt pack, dev.to blog draft, `.antigravity` trace package |
+| Documentation | Architecture doc, API reference, evaluation guide, demo script, AI Studio prompt pack, dev.to blog draft, `.antigravity` trace package |
+| Maintainability | CI workflow, project metadata, PR template, issue templates, security policy, changelog, roadmap |
 
 ## Notes For Submission
 

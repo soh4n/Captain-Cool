@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Insights — Captain Cool IPL Command</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Sora:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: { extend: {
+    colors: {
+      "on-secondary-fixed-variant":"#3c475f","inverse-primary":"#705d00","secondary":"#bcc6e3",
+      "primary-fixed":"#ffe16e","on-primary-container":"#625100","surface-container-highest":"#2e3543",
+      "on-secondary-container":"#aab5d2","primary":"#ffe16f","secondary-container":"#3c475f",
+      "error-container":"#93000a","surface-container-lowest":"#070e1b","on-background":"#dce2f5",
+      "surface":"#0d1321","surface-container-low":"#151c29","on-tertiary":"#00363a",
+      "tertiary-container":"#00dbe9","on-primary":"#3a3000","surface-container":"#19202d",
+      "surface-container-high":"#232a38","on-error-container":"#ffdad6","surface-variant":"#2e3543",
+      "on-secondary":"#263047","on-surface":"#dce2f5","surface-dim":"#0d1321","outline":"#999078",
+      "primary-fixed-dim":"#e9c400","on-primary-fixed":"#221b00","background":"#0d1321",
+      "on-surface-variant":"#d0c6ac","primary-container":"#e9c400","tertiary":"#7bf4ff",
+      "surface-bright":"#333948","surface-tint":"#e9c400","on-error":"#690005","error":"#ffb4ab",
+      "outline-variant":"#4d4632"
+    },
+    borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},
+    spacing:{"section-gap":"32px","margin":"24px","gutter":"16px","container-padding":"20px","unit":"4px"},
+    fontFamily:{"headline-md":["Sora"],"headline-lg":["Sora"],"body-lg":["Inter"],"headline-sm":["Sora"],"data-mono":["Inter"],"body-md":["Inter"],"label-sm":["Inter"],"display-lg":["Sora"]},
+    fontSize:{
+      "headline-md":["24px",{"lineHeight":"32px","fontWeight":"600"}],
+      "headline-lg":["32px",{"lineHeight":"40px","fontWeight":"600"}],
+      "body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],
+      "headline-sm":["20px",{"lineHeight":"28px","fontWeight":"600"}],
+      "data-mono":["14px",{"lineHeight":"20px","letterSpacing":"0.05em","fontWeight":"600"}],
+      "body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],
+      "label-sm":["12px",{"lineHeight":"16px","fontWeight":"500"}],
+      "display-lg":["48px",{"lineHeight":"56px","letterSpacing":"-0.02em","fontWeight":"700"}]
+    }
+  }}
+}
+</script>
+<style>
+.tactical-glow{box-shadow:0 0 15px 0px rgba(233,196,0,0.4)}
+.glass-panel{background:rgba(25,32,45,0.6);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.1)}
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:#0d1321}::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.1);border-radius:2px}
+</style>
+</head>
+<body class="bg-background text-on-surface flex h-screen overflow-hidden font-sans">
+
+<!-- Sidebar -->
+<nav class="bg-surface-container fixed left-0 top-0 h-full w-64 border-r border-white/5 flex flex-col pt-20 pb-8 px-4 z-40 hidden md:flex">
+<div class="mb-10 px-2 flex flex-col gap-1">
+  <h2 class="font-headline-sm text-headline-sm text-primary tracking-tighter">IPL COMMAND</h2>
+  <p id="navLiveLabel" class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Loading...</p>
+</div>
+<ul class="flex flex-col gap-2 flex-1">
+  <li><a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant/70 hover:text-on-surface hover:bg-white/5 transition-all duration-200" href="index.html"><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 0;">psychology_alt</span><span class="font-label-sm text-label-sm uppercase tracking-widest">AI War Room</span></a></li>
+  <li><a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-secondary-container/50 text-primary border-r-2 border-primary translate-x-1" href="insights.html"><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">analytics</span><span class="font-label-sm text-label-sm uppercase tracking-widest">Insights</span></a></li>
+  <li><a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant/70 hover:text-on-surface hover:bg-white/5 transition-all duration-200" href="history.html"><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 0;">history_edu</span><span class="font-label-sm text-label-sm uppercase tracking-widest">History Terminal</span></a></li>
+</ul>
+<a href="index.html" class="mb-6 w-full py-3 bg-primary text-on-primary font-label-sm text-label-sm uppercase tracking-widest rounded-DEFAULT hover:bg-primary/90 transition-colors text-center block">INITIATE DEBATE</a>
+<ul class="flex flex-col gap-2">
+  <li><a class="flex items-center gap-3 px-4 py-2 rounded-lg text-on-surface-variant/70 hover:text-on-surface hover:bg-white/5 transition-all" href="#"><span class="material-symbols-outlined">settings</span><span class="font-label-sm text-label-sm uppercase tracking-widest">Settings</span></a></li>
+  <li><a class="flex items-center gap-3 px-4 py-2 rounded-lg text-on-surface-variant/70 hover:text-on-surface hover:bg-white/5 transition-all" href="#"><span class="material-symbols-outlined">help</span><span class="font-label-sm text-label-sm uppercase tracking-widest">Support</span></a></li>
+</ul>
+</nav>
+
+<main class="flex-1 flex flex-col ml-64 min-w-0">
+<header class="bg-surface/80 backdrop-blur-xl border-b border-white/10 shadow-[0_0_15px_rgba(233,196,0,0.1)] sticky top-0 z-50 flex justify-between items-center w-full px-margin h-16">
+  <div class="flex items-center gap-4">
+    <h1 class="font-headline-md text-headline-md font-bold text-primary tracking-tighter">CAPTAIN COOL</h1>
+  </div>
+  <div class="flex items-center gap-2">
+    <button class="p-2 text-on-surface-variant hover:bg-white/5 rounded-full transition-colors"><span class="material-symbols-outlined">notifications</span></button>
+    <button class="p-2 text-on-surface-variant hover:bg-white/5 rounded-full transition-colors"><span class="material-symbols-outlined">account_circle</span></button>
+  </div>
+</header>
+
+<div class="flex-1 overflow-y-auto p-margin flex flex-col gap-section-gap">
+  <div class="flex justify-between items-end">
+    <div>
+      <p class="font-label-sm text-label-sm text-tertiary uppercase tracking-widest mb-1 flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>Live Analysis Phase</p>
+      <h2 class="font-headline-lg text-headline-lg text-on-surface">Match Insights Deep-Dive</h2>
+    </div>
+    <div class="flex gap-4 items-center">
+      <div id="oversBadge" class="px-3 py-1.5 bg-surface-container rounded border border-white/5 font-data-mono text-data-mono text-on-surface">CRR: <span id="crrVal" class="text-primary">--</span></div>
+      <div class="px-3 py-1.5 bg-surface-container rounded border border-white/5 font-data-mono text-data-mono text-on-surface">RRR: <span id="rrrVal" class="text-tertiary">--</span></div>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-12 gap-gutter" id="insightsGrid">
+    <!-- Live Match Card (8 cols) -->
+    <div class="col-span-12 xl:col-span-8 glass-panel rounded-xl p-container-padding flex flex-col">
+      <div class="flex justify-between items-start mb-6 border-b border-white/10 pb-4">
+        <div><h3 class="font-headline-sm text-headline-sm text-on-surface">Live Match Scorecard</h3><p class="font-body-md text-body-md text-on-surface-variant mt-1">Real-time data from Cricbuzz API.</p></div>
+        <div class="flex flex-col items-end"><div id="statusBadge" class="flex items-center gap-2 text-primary font-headline-md tactical-glow px-3 py-1 bg-primary/10 rounded-lg border border-primary/30"><span class="material-symbols-outlined">sports_cricket</span><span id="matchStatusText">Loading</span></div></div>
+      </div>
+      <!-- Batting -->
+      <div class="mb-6">
+        <h4 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-3">Batting</h4>
+        <div class="grid grid-cols-2 gap-4" id="battingCards">
+          <div class="bg-surface-container-low rounded-lg p-4 border border-white/5 animate-pulse h-24"></div>
+          <div class="bg-surface-container-low rounded-lg p-4 border border-white/5 animate-pulse h-24"></div>
+        </div>
+      </div>
+      <!-- Bowling -->
+      <div>
+        <h4 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-3">Bowling</h4>
+        <div class="grid grid-cols-2 gap-4" id="bowlingCards">
+          <div class="bg-surface-container-low rounded-lg p-4 border border-white/5 animate-pulse h-24"></div>
+          <div class="bg-surface-container-low rounded-lg p-4 border border-white/5 animate-pulse h-24"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Env Cards (4 cols) -->
+    <div class="col-span-12 xl:col-span-4 flex flex-col gap-gutter">
+      <div class="glass-panel rounded-xl p-container-padding flex-1 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-32 h-32 bg-tertiary/10 rounded-full blur-3xl -mr-10 -mt-10"></div>
+        <div class="flex items-center gap-3 mb-4 border-b border-white/10 pb-3"><span class="material-symbols-outlined text-tertiary" style="font-variation-settings:'FILL' 1;">water_drop</span><h3 class="font-headline-sm text-headline-sm text-on-surface">Dew Impact</h3></div>
+        <div class="flex items-end gap-4 mb-2"><span id="dewLevel" class="font-display-lg text-display-lg text-tertiary tracking-tighter">--</span></div>
+        <div class="w-full bg-surface-container-highest rounded-full h-1.5 mb-4"><div id="dewBar" class="bg-tertiary h-1.5 rounded-full w-[0%]"></div></div>
+        <p id="dewDesc" class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Loading weather data...</p>
+      </div>
+      <div class="glass-panel rounded-xl p-container-padding flex-1 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl -mr-10 -mt-10"></div>
+        <div class="flex items-center gap-3 mb-4 border-b border-white/10 pb-3"><span class="material-symbols-outlined text-primary" style="font-variation-settings:'FILL' 1;">location_on</span><h3 class="font-headline-sm text-headline-sm text-on-surface">Venue Intel</h3></div>
+        <div class="flex items-end gap-4 mb-2"><span id="venueCity" class="font-display-lg text-display-lg text-primary tracking-tighter">--</span></div>
+        <p id="venueDesc" class="font-body-md text-body-md text-on-surface-variant">Loading venue data...</p>
+      </div>
+    </div>
+
+    <!-- Partnership & Innings -->
+    <div class="col-span-12 glass-panel rounded-xl p-container-padding">
+      <div class="flex items-center justify-between mb-6 border-b border-white/10 pb-4">
+        <div><h3 class="font-headline-sm text-headline-sm text-on-surface">Innings Summary</h3><p class="font-body-md text-body-md text-on-surface-variant mt-1">Live innings scores and partnership data.</p></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="inningsCards">
+        <div class="bg-surface-container-low rounded-lg p-4 border border-white/5 animate-pulse h-20"></div>
+      </div>
+    </div>
+  </div>
+</div>
+</main>
+
+<script>
+const API = "";
+async function loadInsights() {
+  try {
+    // Load live match
+    const liveRes = await fetch(API + "/api/live");
+    const live = await liveRes.json();
+    if (live.error) {
+      document.getElementById("navLiveLabel").textContent = "No Live IPL Match";
+      document.getElementById("matchStatusText").textContent = "Offline";
+      return;
+    }
+    document.getElementById("navLiveLabel").textContent = `Live: ${live.team_batting} vs ${live.team_bowling}`;
+    document.getElementById("matchStatusText").textContent = live.status || "In Play";
+    document.getElementById("crrVal").textContent = live.crr;
+    document.getElementById("rrrVal").textContent = live.rrr;
+
+    // Load scorecard
+    const scRes = await fetch(API + `/api/match/${live.match_id}`);
+    const sc = await scRes.json();
+
+    // Batting cards
+    const s = sc.striker || {}, ns = sc.non_striker || {};
+    document.getElementById("battingCards").innerHTML = playerCard(s, "Striker", "primary") + playerCard(ns, "Non-Striker", "secondary");
+    // Bowling cards
+    const b = sc.bowler || {}, bns = sc.bowler_ns || {};
+    document.getElementById("bowlingCards").innerHTML = bowlerCard(b, "Current", "error") + bowlerCard(bns, "Previous", "outline");
+    // Innings
+    const innings = sc.innings_scores || [];
+    let inHtml = innings.map(i => `<div class="bg-surface-container-low rounded-lg p-4 border border-white/5"><div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-2">${i.team}</div><div class="font-display-lg text-display-lg text-primary">${i.score}</div><div class="font-data-mono text-data-mono text-on-surface-variant mt-1">${i.overs} overs</div></div>`).join("");
+    inHtml += `<div class="bg-surface-container-low rounded-lg p-4 border border-white/5"><div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-2">Partnership</div><div class="font-headline-md text-headline-md text-tertiary">${sc.partnership || "0(0)"}</div><div class="font-data-mono text-data-mono text-on-surface-variant mt-1">Target: ${sc.target || "N/A"}</div></div>`;
+    document.getElementById("inningsCards").innerHTML = inHtml;
+
+    // Weather
+    const wRes = await fetch(API + `/api/live`);
+    const wd = await wRes.json();
+    document.getElementById("venueCity").textContent = wd.venue || "--";
+    document.getElementById("venueDesc").textContent = `${wd.team_batting} batting at ${wd.venue}`;
+    // Dew estimate based on time
+    const hour = new Date().getHours();
+    const dewLevel = hour >= 19 || hour <= 5 ? "High" : hour >= 16 ? "Medium" : "Low";
+    const dewPct = dewLevel === "High" ? 80 : dewLevel === "Medium" ? 50 : 20;
+    document.getElementById("dewLevel").textContent = dewLevel;
+    document.getElementById("dewBar").style.width = dewPct + "%";
+    document.getElementById("dewDesc").textContent = dewLevel === "High" ? "Heavy moisture expected. Spinners will struggle with grip." : dewLevel === "Medium" ? "Moderate dew forming. Bowling second may be slightly harder." : "Minimal dew expected. Conditions favor bowlers.";
+  } catch(e) {
+    console.error(e);
+    document.getElementById("navLiveLabel").textContent = "API Offline";
+  }
+}
+function playerCard(p, label, color) {
+  return `<div class="bg-surface-container-low rounded-lg p-4 border border-white/5">
+    <div class="flex justify-between items-center mb-2"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">${label}</span><span class="font-data-mono text-data-mono text-${color}">SR: ${p.sr || '0'}</span></div>
+    <p class="font-body-lg text-body-lg text-on-surface font-semibold">${p.name || '--'}</p>
+    <div class="flex gap-4 mt-2 font-data-mono text-data-mono">
+      <span class="text-on-surface">${p.runs || 0}(${p.balls || 0})</span>
+      <span class="text-on-surface-variant">4s: ${p.fours || 0}</span>
+      <span class="text-on-surface-variant">6s: ${p.sixes || 0}</span>
+    </div></div>`;
+}
+function bowlerCard(b, label, color) {
+  return `<div class="bg-surface-container-low rounded-lg p-4 border border-white/5">
+    <div class="flex justify-between items-center mb-2"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">${label}</span><span class="font-data-mono text-data-mono text-${color}">Econ: ${b.economy || '0'}</span></div>
+    <p class="font-body-lg text-body-lg text-on-surface font-semibold">${b.name || '--'}</p>
+    <div class="flex gap-4 mt-2 font-data-mono text-data-mono">
+      <span class="text-on-surface">${b.overs || '0'} ov</span>
+      <span class="text-on-surface-variant">${b.runs || 0} runs</span>
+      <span class="text-error">${b.wickets || 0} wkts</span>
+    </div></div>`;
+}
+loadInsights();
+</script>
+</body></html>

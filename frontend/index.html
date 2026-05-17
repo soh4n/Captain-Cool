@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI War Room — Captain Cool IPL Command</title>
+<meta name="description" content="Captain Cool — AI-powered IPL match strategist with multi-agent tactical debate."/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Sora:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+tailwind.config={darkMode:"class",theme:{extend:{
+colors:{"primary":"#ffe16f","secondary":"#bcc6e3","primary-fixed":"#ffe16e","surface-container-highest":"#2e3543","on-secondary-container":"#aab5d2","secondary-container":"#3c475f","error-container":"#93000a","surface-container-lowest":"#070e1b","on-background":"#dce2f5","surface":"#0d1321","surface-container-low":"#151c29","on-tertiary":"#00363a","tertiary-container":"#00dbe9","on-primary":"#3a3000","surface-container":"#19202d","surface-container-high":"#232a38","on-error-container":"#ffdad6","surface-variant":"#2e3543","on-secondary":"#263047","on-surface":"#dce2f5","surface-dim":"#0d1321","outline":"#999078","primary-fixed-dim":"#e9c400","background":"#0d1321","on-surface-variant":"#d0c6ac","primary-container":"#e9c400","tertiary":"#7bf4ff","surface-bright":"#333948","surface-tint":"#e9c400","on-error":"#690005","error":"#ffb4ab","outline-variant":"#4d4632"},
+borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},
+spacing:{"section-gap":"32px","margin":"24px","gutter":"16px","container-padding":"20px","unit":"4px"},
+fontFamily:{"headline-md":["Sora"],"headline-lg":["Sora"],"body-lg":["Inter"],"headline-sm":["Sora"],"data-mono":["Inter"],"body-md":["Inter"],"label-sm":["Inter"],"display-lg":["Sora"]},
+fontSize:{"headline-md":["24px",{"lineHeight":"32px","fontWeight":"600"}],"headline-lg":["32px",{"lineHeight":"40px","fontWeight":"600"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"600"}],"data-mono":["14px",{"lineHeight":"20px","letterSpacing":"0.05em","fontWeight":"600"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],"label-sm":["12px",{"lineHeight":"16px","fontWeight":"500"}],"display-lg":["48px",{"lineHeight":"56px","letterSpacing":"-0.02em","fontWeight":"700"}]}
+}}}
+</script>
+<style>
+.tactical-glow{box-shadow:0 0 15px 0px rgba(233,196,0,0.4)}
+.glass-panel{background:rgba(25,32,45,0.6);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.1)}
+.agent-pulse{animation:pulse 2s cubic-bezier(0.4,0,0.6,1) infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:#0d1321}::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.1);border-radius:2px}
+.side-btn{transition:all 0.3s}
+.side-btn.active{transform:scale(1.02)}
+</style>
+</head>
+<body class="bg-background text-on-surface flex h-screen overflow-hidden font-sans">
+
+<!-- Sidebar -->
+<nav class="bg-surface-container fixed left-0 top-0 h-full w-64 border-r border-white/5 flex flex-col pt-20 pb-8 px-4 z-40 hidden md:flex">
+<div class="mb-10 px-2 flex flex-col gap-1">
+  <h2 class="font-headline-sm text-headline-sm text-primary tracking-tighter">IPL COMMAND</h2>
+  <p id="navLiveLabel" class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Loading...</p>
+</div>
+<ul class="flex flex-col gap-2 flex-1">
+  <li><a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-secondary-container/50 text-primary border-r-2 border-primary translate-x-1" href="index.html"><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">psychology_alt</span><span class="font-label-sm text-label-sm uppercase tracking-widest">AI War Room</span></a></li>
+  <li><a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant/70 hover:text-on-surface hover:bg-white/5 transition-all duration-200" href="insights.html"><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 0;">analytics</span><span class="font-label-sm text-label-sm uppercase tracking-widest">Insights</span></a></li>
+  <li><a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant/70 hover:text-on-surface hover:bg-white/5 transition-all duration-200" href="history.html"><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 0;">history_edu</span><span class="font-label-sm text-label-sm uppercase tracking-widest">History Terminal</span></a></li>
+</ul>
+<ul class="flex flex-col gap-2">
+  <li><a class="flex items-center gap-3 px-4 py-2 rounded-lg text-on-surface-variant/70 hover:text-on-surface hover:bg-white/5 transition-all" href="#"><span class="material-symbols-outlined">settings</span><span class="font-label-sm text-label-sm uppercase tracking-widest">Settings</span></a></li>
+  <li><a class="flex items-center gap-3 px-4 py-2 rounded-lg text-on-surface-variant/70 hover:text-on-surface hover:bg-white/5 transition-all" href="#"><span class="material-symbols-outlined">help</span><span class="font-label-sm text-label-sm uppercase tracking-widest">Support</span></a></li>
+</ul>
+</nav>
+
+<main class="flex-1 flex flex-col ml-64 min-w-0">
+<header class="bg-surface/80 backdrop-blur-xl border-b border-white/10 shadow-[0_0_15px_rgba(233,196,0,0.1)] sticky top-0 z-50 flex justify-between items-center w-full px-margin h-16">
+  <div class="flex items-center gap-4">
+    <h1 class="font-headline-md text-headline-md font-bold text-primary tracking-tighter">CAPTAIN COOL</h1>
+    <div class="px-3 py-1 rounded bg-surface-container-highest border border-white/10 flex items-center gap-2">
+      <span class="w-2 h-2 rounded-full bg-tertiary agent-pulse"></span>
+      <span id="headerStatus" class="font-data-mono text-data-mono text-tertiary uppercase">Loading</span>
+    </div>
+  </div>
+  <div class="flex items-center gap-2">
+    <button class="p-2 text-on-surface-variant hover:bg-white/5 rounded-full transition-colors"><span class="material-symbols-outlined">notifications</span></button>
+    <button class="p-2 text-on-surface-variant hover:bg-white/5 rounded-full transition-colors"><span class="material-symbols-outlined">account_circle</span></button>
+  </div>
+</header>
+
+<div class="flex-1 overflow-y-auto p-margin flex flex-col gap-gutter">
+  <!-- Live Scoreboard -->
+  <div id="liveScorePanel" class="glass-panel rounded-xl p-container-padding hidden">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div class="flex items-center gap-6">
+        <div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-tertiary agent-pulse"></span><span class="font-label-sm text-label-sm text-tertiary uppercase tracking-widest">Live</span></div>
+        <div>
+          <h3 id="scoreMatchup" class="font-headline-sm text-headline-sm text-on-surface">Loading...</h3>
+          <p id="scoreStatus" class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">--</p>
+        </div>
+      </div>
+      <div class="flex gap-4 flex-wrap">
+        <div id="inningsScoresRow" class="flex gap-3"></div>
+        <div class="flex gap-3">
+          <div class="bg-surface-container-highest/60 px-3 py-2 rounded border border-white/5 text-center"><div class="font-label-sm text-[10px] text-on-surface-variant uppercase">CRR</div><div id="scoreCRR" class="font-data-mono text-data-mono text-primary">--</div></div>
+          <div class="bg-surface-container-highest/60 px-3 py-2 rounded border border-white/5 text-center"><div class="font-label-sm text-[10px] text-on-surface-variant uppercase">RRR</div><div id="scoreRRR" class="font-data-mono text-data-mono text-tertiary">--</div></div>
+          <div class="bg-surface-container-highest/60 px-3 py-2 rounded border border-white/5 text-center"><div class="font-label-sm text-[10px] text-on-surface-variant uppercase">Target</div><div id="scoreTarget" class="font-data-mono text-data-mono text-error">--</div></div>
+        </div>
+      </div>
+      <div class="flex gap-3 text-center">
+        <div class="bg-surface-container-low px-3 py-2 rounded border border-white/5"><div class="font-label-sm text-[10px] text-on-surface-variant uppercase">Striker</div><div id="scoreStriker" class="font-data-mono text-data-mono text-on-surface">--</div></div>
+        <div class="bg-surface-container-low px-3 py-2 rounded border border-white/5"><div class="font-label-sm text-[10px] text-on-surface-variant uppercase">Bowler</div><div id="scoreBowler" class="font-data-mono text-data-mono text-on-surface">--</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Captain Side Selector + Initiate -->
+  <div class="flex flex-col sm:flex-row gap-gutter items-stretch">
+    <div class="flex-1 glass-panel rounded-xl p-container-padding">
+      <p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-3">Choose Your Side</p>
+      <div class="grid grid-cols-2 gap-3">
+        <button id="btnBatting" onclick="setSide('batting')" class="side-btn active flex flex-col items-center gap-2 p-4 rounded-lg bg-primary/15 border-2 border-primary text-primary">
+          <span class="material-symbols-outlined text-3xl">sports_cricket</span>
+          <span class="font-headline-sm text-headline-sm">BATTING</span>
+          <span class="font-label-sm text-label-sm text-on-surface-variant">Captain</span>
+        </button>
+        <button id="btnBowling" onclick="setSide('bowling')" class="side-btn flex flex-col items-center gap-2 p-4 rounded-lg bg-surface-container-highest/50 border-2 border-white/10 text-on-surface-variant">
+          <span class="material-symbols-outlined text-3xl">my_location</span>
+          <span class="font-headline-sm text-headline-sm">BOWLING</span>
+          <span class="font-label-sm text-label-sm text-on-surface-variant">Captain</span>
+        </button>
+      </div>
+    </div>
+    <div class="flex flex-col justify-center">
+      <button id="initiateBtn" onclick="initiateDebate()" class="h-full px-8 py-4 bg-primary text-on-primary font-headline-sm text-headline-sm uppercase tracking-widest rounded-lg hover:bg-primary/90 transition-colors tactical-glow flex items-center gap-3 whitespace-nowrap">
+        <span class="material-symbols-outlined text-2xl">psychology_alt</span>INITIATE DEBATE
+      </button>
+    </div>
+  </div>
+
+  <!-- AI War Room Title -->
+  <div>
+    <p class="font-label-sm text-label-sm text-tertiary uppercase tracking-widest mb-1 flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>Multi-Agent Debate Engine</p>
+    <h2 class="font-headline-lg text-headline-lg text-on-surface">AI War Room</h2>
+  </div>
+
+  <!-- Bento Grid -->
+  <div class="grid grid-cols-12 gap-gutter">
+    <div class="col-span-12 xl:col-span-8 glass-panel rounded-xl p-container-padding flex flex-col min-h-[400px]" id="debateContainer">
+      <div class="text-center text-on-surface-variant/50 my-auto flex flex-col items-center gap-4" id="waitingState">
+        <span class="material-symbols-outlined text-6xl text-primary/30">psychology_alt</span>
+        <p class="font-body-lg text-body-lg">Select your captain's side and click <strong class="text-primary">INITIATE DEBATE</strong>.</p>
+        <p class="font-label-sm text-label-sm text-on-surface-variant/40 uppercase tracking-widest">Stats Analyst → Strategist → Devil's Advocate → Consensus</p>
+      </div>
+    </div>
+
+    <div class="col-span-12 xl:col-span-4 flex flex-col gap-gutter">
+      <div class="glass-panel rounded-xl p-container-padding relative overflow-hidden flex flex-col justify-between flex-1 min-h-[250px]" style="border-color:rgba(233,196,0,0.3);">
+        <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image:radial-gradient(#ffe16f 1px,transparent 1px);background-size:20px 20px;"></div>
+        <div class="relative z-10">
+          <div class="flex items-center gap-2 mb-4 border-b border-white/10 pb-3">
+            <span class="material-symbols-outlined text-primary" style="font-variation-settings:'FILL' 1;">bolt</span>
+            <h3 class="font-data-mono text-primary uppercase tracking-widest text-sm">Consensus Reached</h3>
+          </div>
+          <div class="text-center my-4">
+            <div id="captainBadge" class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary font-data-mono text-data-mono mb-3 hidden"><span class="material-symbols-outlined text-sm">sports_cricket</span><span id="captainBadgeText">BATTING CAPTAIN</span></div>
+            <h2 class="font-display-lg text-display-lg text-on-surface mb-2 tracking-tight leading-tight" id="finalDecisionTitle" style="font-size:2rem;">WAITING...</h2>
+            <p class="font-body-md text-body-md text-on-surface-variant" id="finalDecisionDesc">AI agents are dormant.</p>
+          </div>
+        </div>
+        <div class="relative z-10">
+          <div class="flex justify-between items-end mb-2 border-b border-white/10 pb-2">
+            <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Counterfactual</span>
+            <span class="font-data-mono text-data-mono text-tertiary max-w-[200px] text-right" id="counterfactual">N/A</span>
+          </div>
+          <div class="flex justify-between items-end mb-2 border-b border-white/10 pb-2">
+            <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Dissent</span>
+            <span class="font-data-mono text-data-mono text-error max-w-[200px] text-right truncate" id="dissentSummary">N/A</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</main>
+
+<script>
+const API = "";
+let captainSide = "batting";
+
+function setSide(side) {
+  captainSide = side;
+  const btnBat = document.getElementById("btnBatting");
+  const btnBowl = document.getElementById("btnBowling");
+  if (side === "batting") {
+    btnBat.className = "side-btn active flex flex-col items-center gap-2 p-4 rounded-lg bg-primary/15 border-2 border-primary text-primary";
+    btnBowl.className = "side-btn flex flex-col items-center gap-2 p-4 rounded-lg bg-surface-container-highest/50 border-2 border-white/10 text-on-surface-variant";
+  } else {
+    btnBowl.className = "side-btn active flex flex-col items-center gap-2 p-4 rounded-lg bg-tertiary/15 border-2 border-tertiary text-tertiary";
+    btnBat.className = "side-btn flex flex-col items-center gap-2 p-4 rounded-lg bg-surface-container-highest/50 border-2 border-white/10 text-on-surface-variant";
+  }
+}
+
+async function loadLiveScore() {
+  try {
+    const res = await fetch(API + "/api/live");
+    const d = await res.json();
+    if (d.error) {
+      document.getElementById("navLiveLabel").textContent = "No Live IPL Match";
+      document.getElementById("headerStatus").textContent = "Offline";
+      return;
+    }
+    document.getElementById("navLiveLabel").textContent = `Live: ${d.team_batting} vs ${d.team_bowling}`;
+    document.getElementById("headerStatus").textContent = d.status || "In Play";
+    const panel = document.getElementById("liveScorePanel");
+    panel.classList.remove("hidden");
+    document.getElementById("scoreMatchup").textContent = `${d.team_batting} vs ${d.team_bowling}`;
+    document.getElementById("scoreStatus").textContent = d.status || "";
+    document.getElementById("scoreCRR").textContent = d.crr || "--";
+    document.getElementById("scoreRRR").textContent = d.rrr || "--";
+    document.getElementById("scoreTarget").textContent = d.target || "--";
+    document.getElementById("scoreStriker").textContent = `${d.striker} ${d.striker_runs}(${d.striker_balls})`;
+    document.getElementById("scoreBowler").textContent = d.bowler || "--";
+    // Fetch scorecard for innings scores
+    const scRes = await fetch(API + `/api/match/${d.match_id}`);
+    const sc = await scRes.json();
+    const row = document.getElementById("inningsScoresRow");
+    row.innerHTML = (sc.innings_scores || []).map(i => `<div class="bg-surface-container-highest/60 px-3 py-2 rounded border border-white/5 text-center"><div class="font-label-sm text-[10px] text-on-surface-variant uppercase">${i.team}</div><div class="font-data-mono text-data-mono text-on-surface">${i.score}</div></div>`).join("");
+  } catch(e) {
+    document.getElementById("navLiveLabel").textContent = "API Offline";
+    document.getElementById("headerStatus").textContent = "Disconnected";
+  }
+}
+loadLiveScore();
+setInterval(loadLiveScore, 30000); // refresh every 30s
+
+async function initiateDebate() {
+  const btn = document.getElementById("initiateBtn");
+  const container = document.getElementById("debateContainer");
+  btn.innerHTML = `<span class="material-symbols-outlined text-2xl animate-spin">progress_activity</span>PROCESSING...`;
+  btn.disabled = true; btn.classList.add("opacity-50");
+
+  container.innerHTML = `<div class="text-center text-tertiary my-auto agent-pulse flex flex-col items-center gap-3">
+    <span class="material-symbols-outlined text-5xl">hourglass_top</span>
+    <p class="font-body-lg">Agents debating as <strong>${captainSide.toUpperCase()}</strong> captain...</p>
+    <p class="font-label-sm text-on-surface-variant/50 uppercase tracking-widest">This may take 30-60 seconds</p>
+  </div>`;
+
+  try {
+    const response = await fetch(API + "/api/strategize", {
+      method: "POST", headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({"live": true, "captain_side": captainSide})
+    });
+    const data = await response.json();
+
+    if (data.error) {
+      container.innerHTML = `<div class="text-center text-error my-auto flex flex-col items-center gap-2"><span class="material-symbols-outlined text-4xl">error</span><p class="font-body-lg">${data.error}</p></div>`;
+    } else {
+      // Update live score from response
+      if (data.live_score) {
+        const ls = data.live_score;
+        document.getElementById("scoreMatchup").textContent = `${ls.team_batting} vs ${ls.team_bowling}`;
+        document.getElementById("scoreCRR").textContent = ls.crr || "--";
+        document.getElementById("scoreRRR").textContent = ls.rrr || "--";
+        document.getElementById("scoreTarget").textContent = ls.target || "--";
+        document.getElementById("scoreStriker").textContent = `${ls.striker} ${ls.striker_runs}(${ls.striker_balls})`;
+        document.getElementById("scoreBowler").textContent = ls.bowler || "--";
+      }
+
+      container.innerHTML = `
+        <div class="flex gap-4 w-full mt-2"><div class="w-12 h-12 rounded-lg bg-surface-container-highest border border-tertiary/30 flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-tertiary">query_stats</span></div>
+          <div class="glass-panel rounded-xl p-5 flex-1"><div class="flex items-center gap-2 mb-3 border-b border-white/10 pb-2"><span class="font-data-mono text-data-mono text-tertiary uppercase">Stats Analyst</span><span class="font-label-sm text-label-sm text-on-surface-variant/50">[Agent Gamma]</span></div><p class="font-body-md text-body-md text-on-surface-variant/90 whitespace-pre-line">${data.analyst_report}</p></div></div>
+        <div class="flex gap-4 w-full mt-4"><div class="w-12 h-12 rounded-lg bg-surface-container-highest border border-primary/30 flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-primary">psychology</span></div>
+          <div class="glass-panel rounded-xl p-5 flex-1" style="border-color:rgba(233,196,0,0.2);"><div class="flex items-center gap-2 mb-3 border-b border-white/10 pb-2"><span class="font-data-mono text-data-mono text-primary uppercase">Strategist</span><span class="font-label-sm text-label-sm text-on-surface-variant/50">[Agent Alpha — ${data.captain_side?.toUpperCase()} Captain]</span></div><p class="font-body-md text-body-md text-on-surface-variant/90 whitespace-pre-line">${data.strategist_initial}</p></div></div>
+        <div class="flex gap-4 w-full mt-4 flex-row-reverse"><div class="w-12 h-12 rounded-lg bg-surface-container-highest border border-error/30 flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-error">gavel</span></div>
+          <div class="glass-panel rounded-xl p-5 flex-1 text-right" style="border-color:rgba(255,180,171,0.2);"><div class="flex items-center gap-2 mb-3 border-b border-white/10 pb-2 justify-end"><span class="font-label-sm text-label-sm text-on-surface-variant/50">[Agent Beta]</span><span class="font-data-mono text-data-mono text-error uppercase">Devil's Advocate</span></div><p class="font-body-md text-body-md text-on-surface-variant/90 whitespace-pre-line">${data.devils_advocate}</p></div></div>`;
+
+      // Update consensus panel
+      const badge = document.getElementById("captainBadge");
+      badge.classList.remove("hidden");
+      document.getElementById("captainBadgeText").textContent = `${data.captain_side?.toUpperCase()} CAPTAIN`;
+      document.getElementById("finalDecisionTitle").innerText = data.final_decision.decision || "Decision Made";
+      document.getElementById("finalDecisionDesc").innerText = data.final_decision.reasoning || "";
+      document.getElementById("counterfactual").innerText = data.final_decision.win_prob_context || "N/A";
+      document.getElementById("dissentSummary").innerText = data.final_decision.dissent ? data.final_decision.dissent.substring(0,80)+"..." : "N/A";
+    }
+  } catch(err) {
+    console.error(err);
+    container.innerHTML = `<div class="text-center text-error my-auto flex flex-col items-center gap-2"><span class="material-symbols-outlined text-4xl">wifi_off</span><p>Failed to reach API.</p></div>`;
+  }
+  btn.innerHTML = `<span class="material-symbols-outlined text-2xl">psychology_alt</span>INITIATE DEBATE`;
+  btn.disabled = false; btn.classList.remove("opacity-50");
+}
+</script>
+</body></html>

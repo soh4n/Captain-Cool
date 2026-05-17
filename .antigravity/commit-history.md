@@ -1,36 +1,68 @@
-# Commit History Snapshot
+# Git Commit History
 
-Repository: `soh4n/Captain-Cool`
+**Repository:** `soh4n/Captain-Cool`
+**Remote:** `https://github.com/soh4n/Captain-Cool.git`
+**Branch:** `main`
 
-## Current Cleaned History
+## Current History
 
 ```text
+a8edd3b (HEAD -> main, origin/main) Update cleaned history trace
 d1a6f66 Clean Captain Cool submission
 ```
 
-The branch was rebuilt as a clean orphan history so generated `stitch_assets/` files are not present in any reachable Git commit.
+## Build Window Actions (Antigravity Session)
 
-## Previous Published History Before Cleanup
+The following file operations were performed by the Antigravity agent during
+the build session (conversation `7d5d4c1e`):
 
-```text
-b427c4d Add README architecture diagram
-79529fb Polish docs and remove generated assets
-0e1d5a1 Initial Captain Cool submission
+### Files Created (22)
+```
+backend/tools/cricket_api.py        → src/services/cricket_api.py
+backend/main.py                     → src/api/strategize.py + src/api/matches.py
+frontend/index.html                 (rebuilt 3×)
+frontend/insights.html              (rebuilt 2×)
+frontend/history.html               (rebuilt 2×)
+main.py                             (root entry point)
+src/core/config.py
+src/models/schemas.py
+src/services/agents.py
+src/tests/test_cricket_api.py
+docs/architecture.md
+scripts/start.py
+README.md
+devto_blog.md
+AI_STUDIO_PROMPT.md
+CONTRIBUTING.md
+LICENSE
+.env.example
+.gitignore
+requirements.txt
+test_cricbuzz.py                    (API exploration, removed before commit)
 ```
 
-## Session Notes
-
-- Local repository initialized on branch `main`.
-- Initial source, documentation, frontend, and tests were committed.
-- Remote repository `https://github.com/soh4n/Captain-Cool.git` was added.
-- `main` was pushed to GitHub and later updated with documentation polish.
-- Generated `stitch_assets/` were removed from the tracked tree and scheduled for history purge.
-- ADK scaffold and mocked debate endpoint tests were added for stronger technical-depth evidence.
-- Test suite was verified at `5 passed`.
-- History was rebuilt into a clean root commit before force-pushing the final branch.
-
-Run this command for the latest history after subsequent commits:
-
-```powershell
-git log --oneline --decorate --all
+### Files Modified (14)
 ```
+backend/tools/cricket_api.py       (4 edits — tools, live state, IPL filter, scorecard)
+backend/main.py                    (5 edits — prompts, live flag, captain side, dotenv, routes)
+frontend/index.html                (4 edits — rename, payload, nav, full rebuild ×2)
+frontend/insights.html             (2 edits — nav links, full rebuild)
+frontend/history.html              (2 edits — nav links, full rebuild)
+```
+
+### Session Timeline
+```
+10:28 UTC   Session start — Stitch asset retrieval
+10:40 UTC   Core build begins (backend + frontend)
+10:49 UTC   Cricbuzz API integration
+10:58 UTC   IPL-only filtering
+11:01 UTC   AI Studio prompt integration
+11:10 UTC   Multi-page frontend build
+11:13 UTC   Unified design + backend API expansion
+11:38 UTC   Environment setup (.env + dotenv)
+12:02 UTC   Captain side selector + live scoreboard
+12:08 UTC   Project restructure to clean layout
+12:15 UTC   Session complete
+```
+
+Total build time: **~1 hour 47 minutes**

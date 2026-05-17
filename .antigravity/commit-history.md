@@ -2,7 +2,15 @@
 
 Repository: `soh4n/Captain-Cool`
 
-## Published History Before Final Cleanup
+## Current Cleaned History
+
+```text
+d1a6f66 Clean Captain Cool submission
+```
+
+The branch was rebuilt as a clean orphan history so generated `stitch_assets/` files are not present in any reachable Git commit.
+
+## Previous Published History Before Cleanup
 
 ```text
 b427c4d Add README architecture diagram
@@ -19,6 +27,7 @@ b427c4d Add README architecture diagram
 - Generated `stitch_assets/` were removed from the tracked tree and scheduled for history purge.
 - ADK scaffold and mocked debate endpoint tests were added for stronger technical-depth evidence.
 - Test suite was verified at `5 passed`.
+- History was rebuilt into a clean root commit before force-pushing the final branch.
 
 Run this command for the latest history after subsequent commits:
 
